@@ -83,14 +83,16 @@ namespace Connect4
             {
                 for (int side = -1; side <= 1; side += 2)
                 {
-                    int winCounter = 1;
-                    for (int counter = 1; counter <= 3; counter++)
+                    int winCounter = 0;
+                    for (int counter = -3; counter <= 3; counter++)
                     {
                         int col = currentPos.Column + (counter * (direction.X * side));
                         int row = currentPos.Row + (counter * (direction.Y * side));
 
                         if (HasSameOwner(col, row, current.Owner))
                             winCounter++;
+                        else if (counter < 0)
+                            continue;
                         else
                             break;
                     }
