@@ -1,4 +1,4 @@
-﻿namespace Connect4
+﻿namespace Connect4.Helpers
 {
     public enum FieldType
     {
